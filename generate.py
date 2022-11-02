@@ -29,10 +29,13 @@ def p_sample_loop(self, model, noise, device, noise_fn=torch.randn, capture_ever
 
     return imgs
 
+parser = argparse.ArgumentParser(description="visualization args")
+parser.add_argument("--ckpt", type=str, required=True, help="path to ckpt")
+args=parser.parse_args()
 
 if __name__ == "__main__":
-    conf = load_config(DiffusionConfig, "config/diffusion.conf", show=False)
-    ckpt = torch.load("ckpt-2400k.pt")
+    conf = load_config(DiffusionConfig, "/content/Diffusion-pytorch-test/diffusion.conf", show=False)
+    ckpt = torch.load(args.ckpt)
     model = conf.model.make()
     model.load_state_dict(ckpt["ema"])
     model = model.to("cuda")
