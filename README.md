@@ -9,6 +9,7 @@ Use this following link to start training in colab
 https://colab.research.google.com/drive/1KKy9llE8GWEWCXYQPOoM1lm7hdpBYlrC?usp=sharing
 
 Example generated image
+
 ![sample](https://user-images.githubusercontent.com/87956324/199604647-27c89939-ea13-4cf2-9a2c-452682b4e450.png)
 
 
