@@ -158,7 +158,10 @@ def main(conf):
 
 if __name__ == "__main__":
     conf = load_arg_config(DiffusionConfig)
-
+    newpath = '/content/checkpoint/' 
+    if not os.path.exists(newpath):
+      os.makedirs(newpath)
+    
     dist.launch(
         main, conf.n_gpu, conf.n_machine, conf.machine_rank, conf.dist_url, args=(conf,)
     )
